@@ -9,9 +9,9 @@ PROMPT='[%*] %{$fg[cyan]%}%n%{$reset_color%}:%{$fg[green]%}%3~%{$reset_color%}$(
 
 ZSH_THEME_GIT_PROMPT_DIRTY=""
 ZSH_THEME_GIT_PROMPT_CLEAN="="
-# ZSH_THEME_GIT_PROMPT_EQUAL_REMOTE=" equal remote"
-# ZSH_THEME_GIT_PROMPT_AHEAD_REMOTE=" ahead remote"
-# ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE=" behind remote"
+ZSH_THEME_GIT_PROMPT_EQUAL_REMOTE="="
+ZSH_THEME_GIT_PROMPT_AHEAD_REMOTE=">"
+ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE="<"
 
 ZSH_THEME_GIT_PROMPT_UNTRACKED="^"
 ZSH_THEME_GIT_PROMPT_ADDED="+"
@@ -31,7 +31,7 @@ function git_prompt_info_alt() {
   if [[ "$(command git config --get oh-my-zsh.hide-status 2>/dev/null)" != "1" ]]; then
     ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
     ref=$(command git rev-parse --short HEAD 2> /dev/null) || return 0
-    echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(git_prompt_status)$ZSH_THEME_GIT_PROMPT_SUFFIX"
+    echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(git_prompt_status)$(git_remote_status)$ZSH_THEME_GIT_PROMPT_SUFFIX"
   fi
 }
 
