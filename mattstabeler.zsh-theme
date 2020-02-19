@@ -1,3 +1,4 @@
+# Based on `geoffgarside` theme https://github.com/ohmyzsh/ohmyzsh/blob/master/themes/geoffgarside.zsh-theme
 # PROMPT="[%*] %n:%c $(git_prompt_info)%(!.#.$) "
 PROMPT='[%*] %{$fg[cyan]%}%n%{$reset_color%}:%{$fg[green]%}%c%{$reset_color%}$(git_prompt_info) %(!.#.$) '
 
