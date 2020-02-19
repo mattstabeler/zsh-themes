@@ -1,6 +1,6 @@
 # ZSH Themes
 
-`mattstabeler` is derived from `geoffgarside` theme, but adds dirty state flags and full dir path. 
+`mattstabeler` is derived from `geoffgarside` and `afowler` themes, but adds more git status flags. 
 
 # Installation
 
